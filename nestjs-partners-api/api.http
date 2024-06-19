@@ -1,0 +1,14 @@
+GET http://localhost:3000/events
+
+###
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+  "name": "New Event",
+  "description": "This is my event",
+  "date": "2020-01-01T00:00:00",
+  "price": 100
+}
+
+GET http://localhost:3000/events/55744780-7b69-4867-8d94-92c5cc0e00ed
