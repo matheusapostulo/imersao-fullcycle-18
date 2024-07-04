@@ -10,6 +10,7 @@ var (
 	ErrEventDateFuture   = errors.New("Event date must be in the future")
 	ErrEventCapacityZero = errors.New("Event capacity must be greater than 0")
 	ErrEventPriceZero    = errors.New("Event price must be greater than 0")
+	ErrEventNotFound     = errors.New("Event not found")
 )
 
 type Rating string
@@ -24,18 +25,18 @@ const (
 )
 
 type Event struct {
-	ID             string
-	Name           string
-	Location       string
-	OrganizationID string
-	Rating         Rating
-	Date           time.Time
-	ImageURL       string
-	Capacity       int
-	Price          float64
-	PartnerID      int
-	Spots          []Spot
-	Tickets        []Ticket
+	ID           string
+	Name         string
+	Location     string
+	Organization string
+	Rating       Rating
+	Date         time.Time
+	ImageURL     string
+	Capacity     int
+	Price        float64
+	PartnerID    int
+	Spots        []Spot
+	Tickets      []Ticket
 }
 
 func (e Event) Validate() error {
